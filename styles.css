@@ -6,7 +6,6 @@
 
 body {
     box-sizing: border-box;
-    width: 700px;
     height: 400px;
     margin: auto;
     background-color: rgb(255, 242, 236);
@@ -72,14 +71,14 @@ body {
 
 #player-one .red-dot {
     position: absolute;
-    top: 27%;
-    right:25%
+    top: 25%;
+    right:22%
 }
 
 #player-two .red-dot {
     position: absolute;
-    top: 27%;
-    right:25%
+    top: 25%;
+    right:22%
 }
 
 #player-two {
@@ -91,7 +90,7 @@ body {
 }
 
 .player-name {
-    font-size: 30px;
+    font-size: 15px;
     font-weight: lighter;
     position: absolute;
     left: 50%;
@@ -102,12 +101,12 @@ body {
 
 
 .global-score {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: lighter;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 35%;
+    top: 30%;
     color:rgb(255, 47, 99);
 }
 
@@ -120,8 +119,8 @@ body {
     "four five six"
     "seven eight nine";
     background-color: rgb(255, 255, 255);
-    width : 90px;
-    height: 90px;
+    width : 60px;
+    height: 60px;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
@@ -132,20 +131,20 @@ body {
 
 .round-score {
     background-color: rgb(255, 47, 99);
-    width : 90px;
-    height: 70px;
+    width : 70px;
+    height: 60px;
     margin: 230px auto;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 5%;
+    top: 10%;
     font-size: 12px;
     padding-top: 5px;
 }
 
 #round-score-one, #round-score-two {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: lighter;
     margin-top: 5px;
 }
@@ -153,10 +152,10 @@ body {
 .btn {
     border: none;
     background: none;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     display: flex;
-    width: 130px;
+    width: 120px;
     justify-content: space-around;
     align-items: center;
 }
@@ -180,15 +179,15 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     top: 75%;
-    width :80px;
+    width :70px;
 }
 
 .red-dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 5px;
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
     background: rgb(255, 47, 99);
-    margin:7px auto;
+    margin:7px 6px;
     
 }
 
@@ -280,4 +279,147 @@ body {
     padding:3px;
     background: rgb(255, 47, 99);
     color: white;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        width: 700px;
+        height: 400px;
+    }
+    
+    #game-window {
+        height: 100%;
+        margin-top: 20px;
+    }
+    
+    #player-one .red-dot {
+        position: absolute;
+        top: 27%;
+        right:25%
+    }
+    
+    #player-two .red-dot {
+        top: 27%;
+        right:25%
+    }
+    
+    .player-name {
+        font-size: 30px;
+        top: 25%;
+    }
+    
+    .global-score {
+        font-size: 50px;
+        font-weight: lighter;
+        top: 35%;
+    }
+    
+    #dice {
+        width : 90px;
+        height: 90px;
+        top: 30%;
+    }
+    
+    .round-score {
+        width : 90px;
+        height: 70px;
+        margin: 230px auto;
+        top: 5%;
+        font-size: 12px;
+        padding-top: 5px;
+    }
+    
+    #round-score-one, #round-score-two {
+        font-size: 30px;
+        margin-top: 5px;
+    }
+    
+    .btn {
+        font-size: 15px;
+        width: 130px;
+    }
+    
+    #new-game-btn {
+        top: 10%;
+    }
+    
+    #roll-dice-btn {
+        top: 65%;
+    }
+    
+    #hold-btn {
+        top: 75%;
+        width :80px;
+    }
+    
+    .red-dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 5px;
+        margin:7px auto;
+    }
+    
+    #box-one {
+        width:25px;
+        height: 25px;
+    }
+    
+    #box-two {
+        width:25px;
+        height: 25px;
+    }
+    
+    #box-three {
+        width:25px;
+        height: 25px;
+    }
+    #box-four {
+        width:25px;
+        height: 25px;
+    }
+    #box-five {
+        width:25px;
+        height: 25px;
+    }
+    #box-six {
+        width:25px;
+        height: 25px;
+
+    }
+    #box-seven {
+        width:25px;
+        height: 25px;
+    }
+    #box-eight {
+        width:25px;
+        height: 25px;
+    }
+    #box-nine {
+        width:25px;
+        height: 25px;
+
+    }
+    
+    #message {
+        top: 85%;
+        width :350px;
+    }
+    
+    #yes-btn {
+        left: 40%;
+        top: 93%;
+        width :60px;
+        padding:3px;
+    
+    }
+    
+    #no-btn {
+        left: 60%;
+        top: 93%;
+        width :60px;
+        padding:3px;
+ 
+    }
+
+
 }
