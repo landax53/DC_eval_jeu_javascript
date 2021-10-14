@@ -1,8 +1,8 @@
 //DEFINITION DES VARIABLES
 let globalScoreOneDisplay = document.getElementById("global-score-one");
 let globalScoreTwoDisplay = document.getElementById("global-score-two");
-let currentScoreOneDisplay = document.getElementById("current-score-one");
-let currentScoreTwoDisplay = document.getElementById("current-score-two");
+let roundScoreOneDisplay = document.getElementById("round-score-one");
+let roundScoreTwoDisplay = document.getElementById("round-score-two");
 
 let diceDisplay = document.getElementById("dice");
 let diceNumber = 0;
@@ -10,8 +10,8 @@ let message = document.getElementById("message");
 
 let globalScoreOne = 0;
 let globalScoreTwo = 0;
-let currentScoreOne = 0;
-let currentScoreTwo = 0;
+let roundScoreOne = 0;
+let roundScoreTwo = 0;
 
 let newGameBtn = document.getElementById("new-game-btn");
 let rollDiceBtn = document.getElementById("roll-dice-btn");
@@ -52,8 +52,8 @@ diceNumber = Math.floor(Math.random() * 6 + 1);
 //AFFICHAGE DES SCORES PAR DEFAUT EN DEBUT DE PARTIE
 globalScoreOneDisplay.innerText = globalScoreOne;
 globalScoreTwoDisplay.innerText = globalScoreTwo;
-currentScoreOneDisplay.innerText = currentScoreOne;
-currentScoreTwoDisplay.innerText = currentScoreTwo;
+roundScoreOneDisplay.innerText = roundScoreOne;
+roundScoreTwoDisplay.innerText = roundScoreTwo;
 
 //Message de victoire non affiché par défaut
 message.style.display = "none";
@@ -79,12 +79,12 @@ boxNineChildren.style.display = "block";
 const resetGame = () => {
   globalScoreOne = 0;
   globalScoreTwo = 0;
-  currentScoreOne = 0;
-  currentScoreTwo = 0;
+  roundScoreOne = 0;
+  roundScoreTwo = 0;
   globalScoreOneDisplay.innerText = globalScoreOne;
   globalScoreTwoDisplay.innerText = globalScoreTwo;
-  currentScoreTwoDisplay.innerText = currentScoreTwo;
-  currentScoreOneDisplay.innerText = currentScoreOne;
+  roundScoreTwoDisplay.innerText = roundScoreTwo;
+  roundScoreOneDisplay.innerText = roundScoreOne;
   playerOneDiv.style.display = "block";
   playerTwoDiv.style.display = "block";
   holdBtn.style.display = "flex";
@@ -99,8 +99,8 @@ const resetGame = () => {
   boxEightChildren.style.display = "none";
   boxNineChildren.style.display = "block";
   diceDisplay.style.display = "grid";
-  rollDiceBtn.style.display = "inline";
-  holdBtn.style.display = "inline";
+  rollDiceBtn.style.display = "flex";
+  holdBtn.style.display = "flex";
 };
 
 //ON MASQUE LES JOUEURS ET LE DE SI LES JOUEURS NE SOUHAITENT PLUS REJOUER
@@ -209,27 +209,31 @@ rollDiceBtn.addEventListener("click", () => {
   //ON DEFINIT LE SCORE DU ROUND
   if (playerOne) {
     //PLAYER 1
+    holdBtn.style.display = "flex";
     redDotPlayerOne.style.display = "inline";
     redDotPlayerTwo.style.display = "none";
     if (diceNumber === 1) {
-      currentScoreOne = 0;
-      currentScoreOneDisplay.innerText = currentScoreOne;
+      roundScoreOne = 0;
+      roundScoreOneDisplay.innerText = roundScoreOne;
+      holdBtn.style.display = "none";
       playerOne = false;
     } else {
-      currentScoreOne += diceNumber;
-      currentScoreOneDisplay.innerText = currentScoreOne;
+      roundScoreOne += diceNumber;
+      roundScoreOneDisplay.innerText = roundScoreOne;
     }
   } else {
     //PLAYER 2
+    holdBtn.style.display = "flex";
     redDotPlayerOne.style.display = "none";
     redDotPlayerTwo.style.display = "inline";
     if (diceNumber === 1) {
-      currentScoreTwo = 0;
-      currentScoreTwoDisplay.innerText = currentScoreTwo;
+      roundScoreTwo = 0;
+      roundScoreTwoDisplay.innerText = roundScoreTwo;
+      holdBtn.style.display = "none";
       playerOne = true;
     } else {
-      currentScoreTwo += diceNumber;
-      currentScoreTwoDisplay.innerText = currentScoreTwo;
+      roundScoreTwo += diceNumber;
+      roundScoreTwoDisplay.innerText = roundScoreTwo;
     }
   }
 });
@@ -239,10 +243,10 @@ holdBtn.addEventListener("click", () => {
   if (playerOne) {
     redDotPlayerOne.style.display = "none";
     redDotPlayerTwo.style.display = "inline";
-    globalScoreOne += currentScoreOne;
+    globalScoreOne += roundScoreOne;
     globalScoreOneDisplay.innerText = globalScoreOne;
-    currentScoreOne = 0;
-    currentScoreOneDisplay.innerText = currentScoreOne;
+    roundScoreOne = 0;
+    roundScoreOneDisplay.innerText = roundScoreOne;
     playerOne = false;
     if (globalScoreOne >= 100) {
       globalScoreOneDisplay.innerText = "100";
@@ -264,10 +268,10 @@ holdBtn.addEventListener("click", () => {
   } else {
     redDotPlayerOne.style.display = "inline";
     redDotPlayerTwo.style.display = "none";
-    globalScoreTwo += currentScoreTwo;
+    globalScoreTwo += roundScoreTwo;
     globalScoreTwoDisplay.innerText = globalScoreTwo;
-    currentScoreTwo = 0;
-    currentScoreTwoDisplay.innerText = currentScoreTwo;
+    roundScoreTwo = 0;
+    roundScoreTwoDisplay.innerText = roundScoreTwo;
     playerOne = true;
     if (globalScoreTwo >= 100) {
       globalScoreTwoDisplay.innerText = "100";
