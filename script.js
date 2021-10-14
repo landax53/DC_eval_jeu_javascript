@@ -16,6 +16,8 @@ let currentScoreTwo = 0;
 let newGameBtn = document.getElementById("new-game-btn");
 let rollDiceBtn = document.getElementById("roll-dice-btn");
 let holdBtn = document.getElementById("hold-btn");
+let yesBtn = document.getElementById("yes-btn");
+let noBtn = document.getElementById("no-btn");
 let playerOne = true;
 
 let boxOne = document.getElementById("box-one");
@@ -52,6 +54,11 @@ globalScoreOneDisplay.innerText = globalScoreOne;
 globalScoreTwoDisplay.innerText = globalScoreTwo;
 currentScoreOneDisplay.innerText = currentScoreOne;
 currentScoreTwoDisplay.innerText = currentScoreTwo;
+
+//Message de victoire non affiché par défaut
+message.style.display = "none";
+yesBtn.style.display = "none";
+noBtn.style.display = "none";
 
 //LE PLAYER 1 JOUE EN PREMIER PAR DEFAUT
 redDotPlayerOne.style.display = "inline";
@@ -223,16 +230,29 @@ holdBtn.addEventListener("click", () => {
     currentScoreOne = 0;
     currentScoreOneDisplay.innerText = currentScoreOne;
     playerOne = false;
-    if (globalScoreOne >= 100) {
-      if (confirm("Vous avez gagné Player 1 !! Voulez-vous rejouer?")) {
+    if (globalScoreOne >= 10) {
+      globalScoreOneDisplay.innerText = "10";
+      message.innerHTML =
+        "<p>Vous avez gagné player 1 !!! Voulez-vous rejouer ?<p>";
+      message.style.display = "inline";
+      yesBtn.style.display = "inline";
+      noBtn.style.display = "inline";
+      yesBtn.addEventListener("click", () => {
         resetGame();
-      } else {
+        message.style.display = "none";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+      });
+      noBtn.addEventListener("click", () => {
         playerOneDiv.style.display = "none";
         playerTwoDiv.style.display = "none";
         holdBtn.style.display = "none";
         rollDiceBtn.style.display = "none";
         diceDisplay.style.display = "none";
-      }
+        message.style.display = "none";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+      });
     }
   } else {
     redDotPlayerOne.style.display = "inline";
@@ -242,17 +262,29 @@ holdBtn.addEventListener("click", () => {
     currentScoreTwo = 0;
     currentScoreTwoDisplay.innerText = currentScoreTwo;
     playerOne = true;
-    if (globalScoreTwo >= 100) {
-      if (confirm("Vous avez gagné Player 2 !! Voulez-vous rejouer?")) {
+    if (globalScoreTwo >= 10) {
+      globalScoreTwoDisplay.innerText = "10";
+      message.innerHTML =
+        "<p>Vous avez gagné player 2 !!! Voulez-vous rejouer ?<p>";
+      message.style.display = "inline";
+      yesBtn.style.display = "inline";
+      noBtn.style.display = "inline";
+      yesBtn.addEventListener("click", () => {
         resetGame();
-      } else {
-        //ON EFFACE LES PLAYERS 1 ET 2, AINSI QUE LES SCORES ET LES BOUTONS
+        message.style.display = "none";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+      });
+      noBtn.addEventListener("click", () => {
         playerOneDiv.style.display = "none";
         playerTwoDiv.style.display = "none";
         holdBtn.style.display = "none";
         rollDiceBtn.style.display = "none";
         diceDisplay.style.display = "none";
-      }
+        message.style.display = "none";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+      });
     }
   }
 });

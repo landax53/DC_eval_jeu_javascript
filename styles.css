@@ -1,3 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    box-sizing: border-box;
+    width: 700px;
+    height: 400px;
+    margin: auto;
+    background-color: rgb(255, 242, 236);
+    font-family:'Lato', sans-serif;
+    cursor: default;
+}
+
+#game-window {
+    display: flex;
+    height: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -36,26 +60,7 @@
     font-feature-settings: 'liga';
   }
 
-* {
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    box-sizing: border-box;
-    width: 700px;
-    height: 400px;
-    margin: auto;
-    background-color: rgb(255, 242, 236);
-    font-family:'Lato', sans-serif;;
-}
-
-#game-window {
-    display: flex;
-    height: 100%;
-    margin-top: 20px;
-    position: relative;
-}
 
 #player-one {
     background-color: rgb(240, 240, 240);
@@ -133,7 +138,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 10%;
+    top: 5%;
     font-size: 12px;
     padding-top: 5px;
 }
@@ -167,14 +172,14 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 70%;
+    top: 65%;
 }
 
 #hold-btn {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 80%;
+    top: 75%;
     width :80px;
 }
 
@@ -242,4 +247,37 @@ body {
     width:25px;
     height: 25px;
     margin:auto;
+}
+
+#message {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 85%;
+    width :350px;
+    text-align: center;
+    color: rgb(255, 47, 99);
+    font-weight: bold;
+}
+
+#yes-btn {
+    position: absolute;
+    left: 40%;
+    transform: translate(-50%, 0);
+    top: 93%;
+    width :60px;
+    padding:3px;
+    background: rgb(255, 47, 99);
+    color: white;
+}
+
+#no-btn {
+    position: absolute;
+    left: 60%;
+    transform: translate(-50%, 0);
+    top: 93%;
+    width :60px;
+    padding:3px;
+    background: rgb(255, 47, 99);
+    color: white;
 }
