@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Dé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="game-window">
+        <div id="player-one">
+            <div class="player-name">PLAYER 1 </div><div id="redDotOne" class="red-dot"></div>
+            <div class="global-score" id="global-score-one"></div>
+            <div class="current-score">
+                CURRENT
+               <div id="current-score-one"></div>
+            </div> 
+        </div>
+        <div id="player-two">
+            <div class="player-name">PLAYER 2 </div><div id="redDotTwo" class="red-dot"></div>
+            <div class="global-score" id="global-score-two"></div>
+            <div class="current-score">
+                CURRENT
+                <div id="current-score-two"></div>
+             </div> 
+        </div>
+        <div id="game-options">
+            <button class="btn" id="new-game-btn"><span class="material-icons">add_circle_outline</span>NEW GAME </button>
+            <div id="dice">
+                
+                <div id="box-one"><div class="red-dot"></div></div>
+                <div id="box-two"><div class="red-dot"></div></div>
+                <div id="box-three"><div class="red-dot"></div></div>
+                <div id="box-four"><div class="red-dot"></div></div>
+                <div id="box-five"><div class="red-dot"></div></div>
+                <div id="box-six"><div class="red-dot"></div></div>
+                <div id="box-seven"><div class="red-dot"></div></div>
+                <div id="box-eight"><div class="red-dot"></div></div>
+                <div id="box-nine"><div class="red-dot"></div></div>
+            </div>
+            <button class="btn" id="roll-dice-btn"><span class="material-icons">
+                cached
+                </span>ROLL DICE</button>
+            <button class="btn" id="hold-btn"><span class="material-icons">
+                save_alt
+                </span>HOLD</button>
+                
+
+        </div>
+        
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
