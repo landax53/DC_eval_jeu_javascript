@@ -99,6 +99,20 @@ const resetGame = () => {
   boxEightChildren.style.display = "none";
   boxNineChildren.style.display = "block";
   diceDisplay.style.display = "grid";
+  rollDiceBtn.style.display = "inline";
+  holdBtn.style.display = "inline";
+};
+
+//ON MASQUE LES JOUEURS ET LE DE SI LES JOUEURS NE SOUHAITENT PLUS REJOUER
+const hideGame = () => {
+  playerOneDiv.style.display = "none";
+  playerTwoDiv.style.display = "none";
+  holdBtn.style.display = "none";
+  rollDiceBtn.style.display = "none";
+  diceDisplay.style.display = "none";
+  message.style.display = "none";
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
 };
 
 //LANCEMENT DU DÉ AU CLIC
@@ -237,22 +251,15 @@ holdBtn.addEventListener("click", () => {
       message.style.display = "inline";
       yesBtn.style.display = "inline";
       noBtn.style.display = "inline";
+      rollDiceBtn.style.display = "none";
+      holdBtn.style.display = "none";
       yesBtn.addEventListener("click", () => {
         resetGame();
         message.style.display = "none";
         yesBtn.style.display = "none";
         noBtn.style.display = "none";
       });
-      noBtn.addEventListener("click", () => {
-        playerOneDiv.style.display = "none";
-        playerTwoDiv.style.display = "none";
-        holdBtn.style.display = "none";
-        rollDiceBtn.style.display = "none";
-        diceDisplay.style.display = "none";
-        message.style.display = "none";
-        yesBtn.style.display = "none";
-        noBtn.style.display = "none";
-      });
+      noBtn.addEventListener("click", hideGame);
     }
   } else {
     redDotPlayerOne.style.display = "inline";
@@ -269,22 +276,15 @@ holdBtn.addEventListener("click", () => {
       message.style.display = "inline";
       yesBtn.style.display = "inline";
       noBtn.style.display = "inline";
+      rollDiceBtn.style.display = "none";
+      holdBtn.style.display = "none";
       yesBtn.addEventListener("click", () => {
         resetGame();
         message.style.display = "none";
         yesBtn.style.display = "none";
         noBtn.style.display = "none";
       });
-      noBtn.addEventListener("click", () => {
-        playerOneDiv.style.display = "none";
-        playerTwoDiv.style.display = "none";
-        holdBtn.style.display = "none";
-        rollDiceBtn.style.display = "none";
-        diceDisplay.style.display = "none";
-        message.style.display = "none";
-        yesBtn.style.display = "none";
-        noBtn.style.display = "none";
-      });
+      noBtn.addEventListener("click", hideGame);
     }
   }
 });
