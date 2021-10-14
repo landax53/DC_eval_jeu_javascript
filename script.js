@@ -230,8 +230,8 @@ holdBtn.addEventListener("click", () => {
     currentScoreOne = 0;
     currentScoreOneDisplay.innerText = currentScoreOne;
     playerOne = false;
-    if (globalScoreOne >= 10) {
-      globalScoreOneDisplay.innerText = "10";
+    if (globalScoreOne >= 100) {
+      globalScoreOneDisplay.innerText = "100";
       message.innerHTML =
         "<p>Vous avez gagné player 1 !!! Voulez-vous rejouer ?<p>";
       message.style.display = "inline";
@@ -262,8 +262,8 @@ holdBtn.addEventListener("click", () => {
     currentScoreTwo = 0;
     currentScoreTwoDisplay.innerText = currentScoreTwo;
     playerOne = true;
-    if (globalScoreTwo >= 10) {
-      globalScoreTwoDisplay.innerText = "10";
+    if (globalScoreTwo >= 100) {
+      globalScoreTwoDisplay.innerText = "100";
       message.innerHTML =
         "<p>Vous avez gagné player 2 !!! Voulez-vous rejouer ?<p>";
       message.style.display = "inline";
